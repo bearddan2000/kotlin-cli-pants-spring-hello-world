@@ -1,0 +1,21 @@
+# Copyright 2020 Pants project contributors.
+# Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+[GLOBAL]
+pants_version = "2.17.0"
+backend_packages.add = [
+  "pants.backend.experimental.kotlin",
+]
+
+[anonymous-telemetry]
+enabled = true
+repo_id = "3B1D361B-E9F1-49A8-B761-03DCC41FD58E"
+
+[source]
+# The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.
+root_patterns = ["/src/main"]
+
+# Configure the specific Kotlin version to use for a resolve. This version must match the version used for the
+# `jvm_artifact` targets providing the Kotlin runtime library jars.
+[kotlin.version_for_resolve]
+jvm-default = "1.6.21"
